@@ -1,21 +1,15 @@
-
-
-import './App.css'
-import TipCalculatorComponent from './components/TipCalculatorComponent'
+import "./App.css";
+import TipCalculatorComponent from "./components/TipCalculatorComponent";
 
 function App() {
-
-
   return (
-    
-    <div className='h-screen bg-lightgrayishcyan flex flex-col justify-center items-center  gap-10 '>
+    <div className="h-screen bg-lightgrayishcyan flex flex-col justify-center items-center  gap-10 pt-10 sm:p-10  ">
       <div>
-
-    <img src="./images/logo.svg" alt="Splitter logo" />
+        <img src="./images/logo.svg" alt="Splitter logo" />
       </div>
-      <TipCalculatorComponent/>
+      <TipCalculatorComponent />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
