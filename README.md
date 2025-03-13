@@ -1,12 +1,8 @@
-# React + Vite
+// Submitted By: Karen Cadavos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+// Date Revised: 03/13/2025
 
-Currently, two official plugins are available:
+//Exercise Name: Tip Calculator
+// description:Create a tip Calculator from the FrontEndMentor starter . Used React for the development of this app. Used assets provided
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+//Peer Reviewed by:
