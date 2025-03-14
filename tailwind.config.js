@@ -7,7 +7,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        
         strongcyan: "hsl(172, 67%, 45%)",
         verydarkcyan: "hsl(183, 100%, 15%)",
         darkgrayishcyan: "hsl(186, 14%, 43%)",

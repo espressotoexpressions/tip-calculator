@@ -1,46 +1,54 @@
 import { React, useState, useEffect } from "react";
 
 const TipCalculatorComponent = () => {
-  const [bill, setBill] = useState('');
-  const [tipPercent, setTipPercent] = useState('');
-  const [customTip,setCustomTip] =useState('');
-  const [numPeople, setNumPeople] = useState('');
+  const [bill, setBill] = useState("");
+  const [tipPercent, setTipPercent] = useState("");
+  const [customTip, setCustomTip] = useState("");
+  const [numPeople, setNumPeople] = useState("");
   const [tipAmt, setTipAmt] = useState("0.00");
   const [totalAmtPerPerson, setTotalAmtPerPerson] = useState("0.00");
- 
+
   const ResetValues = () => {
-    setBill('');
-    setTipPercent('');
-    setCustomTip('');
-    setNumPeople('');
+    setBill("");
+    setTipPercent("");
+    setCustomTip("");
+    setNumPeople("");
     setTipAmt("0.00");
     setTotalAmtPerPerson("0.00");
   };
+  
 
   const calculateTip = () => {
-    if (numPeople > 0 && (tipPercent > 0 || customTip !='')) {
-   
-      if(customTip!='')
-        {
-          console.log("ENTERING CUSTOM TIP");
-         const newTipAmt = (((parseFloat(bill)*(parseInt(customTip)*0.01))/numPeople).toFixed(2));
-          setTipAmt(newTipAmt);
-          console.log("NEW TIP AMT" + newTipAmt)
-          setTotalAmtPerPerson(
-            ((parseFloat(bill) / parseInt(numPeople)) + parseFloat(newTipAmt)).toFixed(2)
-          );
-        }
-        else
-        {
-          console.log("ENTERING  % TIP ");
-          const newTipAmt = (((parseFloat(bill)*(parseInt(tipPercent)*0.01))/numPeople).toFixed(2));
-          setTipAmt(newTipAmt);
-        
-          setTotalAmtPerPerson(
-            ((parseFloat(bill) / parseInt(numPeople)) + parseFloat(newTipAmt)).toFixed(2)
-          );
-        }
-    
+    if (numPeople > 0 && (tipPercent > 0 || customTip != "")) {
+      if (customTip != "") {
+        console.log("ENTERING CUSTOM TIP");
+        const newTipAmt = (
+          (parseFloat(bill) * (parseInt(customTip) * 0.01)) /
+          numPeople
+        ).toFixed(2);
+        setTipAmt(newTipAmt);
+        console.log("NEW TIP AMT" + newTipAmt);
+        setTotalAmtPerPerson(
+          (
+            parseFloat(bill) / parseInt(numPeople) +
+            parseFloat(newTipAmt)
+          ).toFixed(2)
+        );
+      } else {
+        console.log("ENTERING  % TIP ");
+        const newTipAmt = (
+          (parseFloat(bill) * (parseInt(tipPercent) * 0.01)) /
+          numPeople
+        ).toFixed(2);
+        setTipAmt(newTipAmt);
+
+        setTotalAmtPerPerson(
+          (
+            parseFloat(bill) / parseInt(numPeople) +
+            parseFloat(newTipAmt)
+          ).toFixed(2)
+        );
+      }
     }
   };
   useEffect(() => {
@@ -51,7 +59,7 @@ const TipCalculatorComponent = () => {
     console.log("PEOPLE #" + numPeople);
     console.log("TIP AMT " + tipAmt);
     console.log("TOTAL per person" + totalAmtPerPerson);
-  }, [bill, tipPercent, numPeople,customTip]);
+  }, [bill, tipPercent, numPeople, customTip]);
 
   return (
     <div className="bg-white grid grid-cols-1 sm:grid-cols-2  rounded-2xl w-full sm:w-3/4 p-5 sm:p-10 gap-10 ">
@@ -81,35 +89,35 @@ const TipCalculatorComponent = () => {
               value="5"
               onClick={(e) => {
                 setTipPercent(e.target.value);
-                setCustomTip('');
+                setCustomTip("");
               }}
             >
               5%
             </button>
             <button
-          className={` rounded-md hover:text-verydarkcyan  hover:bg-lightgrayishcyan font-bold  ${
-            tipPercent == 10
-              ? "bg-strongcyan text-verydarkcyan"
-              : "bg-verydarkcyan text-white"
-          } `}
+              className={` rounded-md hover:text-verydarkcyan  hover:bg-lightgrayishcyan font-bold  ${
+                tipPercent == 10
+                  ? "bg-strongcyan text-verydarkcyan"
+                  : "bg-verydarkcyan text-white"
+              } `}
               value="10"
               onClick={(e) => {
                 setTipPercent(e.target.value);
-                setCustomTip('');
+                setCustomTip("");
               }}
             >
               10%
             </button>
             <button
-            className={` rounded-md hover:text-verydarkcyan hover:bg-lightgrayishcyan font-bold  ${
-              tipPercent == 15
-                ? "bg-strongcyan text-verydarkcyan"
-                : "bg-verydarkcyan text-white"
-            } `}
+              className={` rounded-md hover:text-verydarkcyan hover:bg-lightgrayishcyan font-bold  ${
+                tipPercent == 15
+                  ? "bg-strongcyan text-verydarkcyan"
+                  : "bg-verydarkcyan text-white"
+              } `}
               value="15"
               onClick={(e) => {
                 setTipPercent(e.target.value);
-                setCustomTip('');
+                setCustomTip("");
               }}
             >
               15%
@@ -123,21 +131,21 @@ const TipCalculatorComponent = () => {
               value="25"
               onClick={(e) => {
                 setTipPercent(e.target.value);
-                setCustomTip('');
+                setCustomTip("");
               }}
             >
               25%
             </button>
             <button
-             className={` rounded-md hover:text-verydarkcyan hover:bg-lightgrayishcyan font-bold  ${
-              tipPercent == 50
-                ? "bg-strongcyan text-verydarkcyan"
-                : "bg-verydarkcyan text-white"
-            } `}
+              className={` rounded-md hover:text-verydarkcyan hover:bg-lightgrayishcyan font-bold  ${
+                tipPercent == 50
+                  ? "bg-strongcyan text-verydarkcyan"
+                  : "bg-verydarkcyan text-white"
+              } `}
               value="50"
               onClick={(e) => {
                 setTipPercent(e.target.value);
-                setCustomTip('');
+                setCustomTip("");
               }}
             >
               50%
@@ -145,10 +153,10 @@ const TipCalculatorComponent = () => {
             <input
               type="text"
               placeholder="Custom"
-              className="bg-gray-100 placeholder-verydarkcyan text-center text-verydarkcyan rounded-md font-bold focus:ring-2 focus:ring-strongcyan border-none" 
+              className="bg-gray-100 placeholder-verydarkcyan text-center text-verydarkcyan rounded-md font-bold focus:ring-2 focus:ring-strongcyan border-none"
               onChange={(e) => {
                 setCustomTip(e.target.value);
-                setTipPercent(''); 
+                setTipPercent("");
               }}
               value={customTip}
             />
@@ -163,11 +171,9 @@ const TipCalculatorComponent = () => {
               placeholder="0"
               className="text-right w-full  bg-gray-100 border-none  rounded-md focus:ring-0 text-verydarkcyan text-2xl text-bold"
               value={numPeople}
-              onChange={(e) =>{
+              onChange={(e) => {
                 setNumPeople(e.target.value);
-               
-              } }
-              
+              }}
             />
           </div>
         </div>
@@ -182,7 +188,7 @@ const TipCalculatorComponent = () => {
               <p className="text-white text-sm ">Tip Amount</p>
               <p className="text-grayishcyan  text-xs">/ person</p>
             </div>
-            <p className="text-4xl text-strongcyan">{tipAmt}</p>
+            <p className="text-4xl text-strongcyan">${tipAmt}</p>
           </div>
 
           <div className="flex flex-wrap justify-between">
@@ -190,11 +196,13 @@ const TipCalculatorComponent = () => {
               <p className="text-white text-sm">Total Amount</p>
               <p className="text-grayishcyan  text-xs">/ person</p>
             </div>
-            <p className="text-4xl text-strongcyan">{totalAmtPerPerson}</p>
+            <p className="text-4xl text-strongcyan">${totalAmtPerPerson}</p>
           </div>
         </div>
         <button
+       
           className="w-full bg-strongcyan text-verydarkcyan  hover:bg-lightgrayishcyan  p-2 rounded-md font-bold text-md"
+          
           onClick={ResetValues}
         >
           RESET
